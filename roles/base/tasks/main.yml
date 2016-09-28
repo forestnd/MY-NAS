@@ -1,0 +1,45 @@
+---
+#Things to do before nas install can start
+- name: Add entier to host file
+  lineinfile: 
+    dest: /etc/hosts
+    regexp: '^127\.0\.0\.1'
+    line: '127.0.0.1 {{ ansible_hostname }}'     
+  tags: pre-configure
+
+#set network settigs
+- name: Set network interface to static
+  template: src=network-interface.j2 dest=/etc/network/interfaces backup=yes
+  tags: interfaces
+
+#set network settigs
+- name: Set network hostname
+  template: src=hostname.j2 dest=/etc/hostname backup=yes
+  tags: interfaces
+
+#reboot server
+- name: Reboot Server for network to reset
+  become: yes
+  shell: sleep 2 && shutdown -r now
+  async: 1
+  poll: 0
+  ignore_errors: true
+  tags: reboot
+
+- name: Waiting {{ ansible_hostname }} to come back up
+  become: false
+  local_action:
+    wait_for
+    host={{ ansible_default_ipv4.address }}
+    state=started
+    delay=30
+    timeout=60
+  tags: reboot
+
+#Make sure the packages are uptodate
+- name: Make sure all packages are up-to-date
+  become_method: sudo
+  apt:
+    upgrade: dist
+    update_cache: yes
+  tags: install-package

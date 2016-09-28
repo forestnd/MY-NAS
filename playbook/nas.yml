@@ -1,0 +1,7 @@
+---
+- name: install and configure openmediavault
+  become: yes
+  hosts: omv
+  roles:
+    - roles/base
+    - roles/open_media_vault	

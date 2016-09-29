@@ -6,15 +6,16 @@ My First ansible project, so i am rebuild my home made nas server and makeing it
 using 
 ------------
 ## How to run command
-1. Create an inventories.yml file
+Create an inventories.yml file
 You need to craete an inventories folder and a inventories.yml file
+
 `touch inventories/inventories.yml`
 ```erb
 # Add here IPs of omv machines 
 [omv]
 <<HERE INSERT IP OF NAS MACHINE (localhost is also correct...)>>
 ```
-2. Run this command to start the process `ansible-playbook playbook/nas.yml`
+Run this command to start the process `ansible-playbook playbook/nas.yml`
 
 
 ## Each Ansible Role does

@@ -1,9 +1,12 @@
 # openmediavault-NAS
 
-My First ansible project to rebuild my home made nas server
+My First ansible project, so i am rebuild my home made nas server and makeing it automaited 
+using 
 
-each role
-~ base -> basic install of os and setsup
-		-> static network
-		-> hostname
-		-> checks all RPMS are up to date
+------------
+##Each Role
+1. Base basic install of os and setsup
+     This is set up to change 
+       A. The network settings from DHCP to static (including DNS)
+       B. Set the hostname
+       C. Run an "apt-get update" to install the most uptodate rpms packages

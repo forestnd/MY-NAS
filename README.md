@@ -11,7 +11,7 @@ Use the example inventories.yml file
 
 add the ip address or hostname of the server using
 
-Run this command to start the process `ansible -i inventories/inventory.yml.example playbook/nas.yml`
+Run this command to start the process `ansible-playbook -i inventories/inventory.yml.example playbook/nas.yml`
 
 
 ## Each Ansible Role does

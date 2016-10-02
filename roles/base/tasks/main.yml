@@ -43,3 +43,28 @@
     upgrade: dist
     update_cache: yes
   tags: install-package
+
+
+- name: Install NTP
+  become_method: sudo
+  apt:
+    name: "ntp"
+    state: present
+  tags: install-package (NTP)
+
+
+- name: Config NTP settings
+  become_method: sudo
+  template: src=ntp.conf.j2 dest=/etc/ntp.conf backup=yes
+  tags: Setup-package (NTP)
+
+- name: Reboot Server for network to reset
+  become: yes
+  become_method: sudo
+  shell: ntpdate
+  async: 1
+  poll: 0
+  ignore_errors: true
+  tags: reboot
+
+

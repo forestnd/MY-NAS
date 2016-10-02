@@ -1,0 +1,28 @@
+---
+#Repo varable
+- name: Add openmediavault repository in sources.list.d/.
+  become_method: sudo
+  apt_repository:
+    repo: "{{ item }}"
+    update_cache: yes
+  with_items: '{{ repo }}'
+  tags: repo
+
+
+- name: Add omv apt key
+  become_method: sudo
+  apt_key:
+    url: http://packages.openmediavault.org/public/archive.key 
+    state: present
+  tags: repo
+
+- name: get the openmediavault-omvextrasorg_latest_all.deb
+  copy:
+    src: "{{ role_path }}/files/openmediavault-omvextrasorg_latest_all.deb"
+    dest: /tmp/openmediavault-omvextrasorg_latest_all.deb
+
+- name: Download and install omv-extras deb package
+  become_method: sudo
+  apt: 
+    deb: "/tmp/openmediavault-omvextrasorg_latest_all.deb"
+  tags: extra

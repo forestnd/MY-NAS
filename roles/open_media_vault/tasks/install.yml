@@ -1,0 +1,44 @@
+---
+- name: Perform apt-get update and update cache
+  become_method: sudo
+  apt:
+    upgrade: dist
+    update_cache: yes
+  tags: install-package
+
+- name: Install openmediavault packages and tools
+  become_method: sudo
+  apt:
+    name: "{{ packages }}"
+    state: present
+  tags: install-package
+
+#Config server
+- name: Enable ssh access to omv
+  shell: "omv-config -m /config/services/ssh/enable 1"
+  tags: enable_ssh
+
+- name: Enable ssh service on boot
+  service:
+    name: ssh
+    enabled: yes
+    state: started
+  tags: enable_ssh
+
+- name: Reboot omv node
+  become: yes
+  shell: sleep 2 && shutdown -r now
+  async: 1
+  poll: 0
+  ignore_errors: true
+  tags: reboot
+
+- name: Waiting for omv node to come back
+  become: false
+  local_action:
+    wait_for
+    host={{ ansible_default_ipv4.address }}
+    state=started
+    delay=30
+    timeout=60
+  tags: reboot

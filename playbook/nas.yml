@@ -1,7 +1,21 @@
 ---
-- name: install and configure openmediavault
+- name: Setting up NAS server
   become: yes
   hosts: omv
   roles:
     - roles/base
-    - roles/open_media_vault	
+    - roles/open_media_vault
+  vars:
+   packages:
+    - openmediavault-keyring
+    - vim
+    - htop
+    - postfix
+    - openmediavault
+   repo:
+    - 'deb http://packages.openmediavault.org/public stoneburner main'
+   NTPSERVER1: 0.ubuntu.pool.ntp.org
+   NTPSERVER2: 
+   NTPSERVER3: 
+   NTPSERVER4: 
+   NTPSERVER5: 

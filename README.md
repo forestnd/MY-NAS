@@ -18,8 +18,8 @@ Run this command to start the process `ansible-playbook -i inventories/inventory
 1. Base basic install of os and setup
      1. Switching the DHCP to Static
      2. Configure DNS settings
-     3. Makeing suer OS is fully up to date
-     4. INstalling ntp
+     3. Running update on OS is fully up to date
+     4. Installing ntp
      5. Configuaring ntp time server (max 5)
 2. Openmediavault setup (working on)
      1. Get openmediavault repo info 

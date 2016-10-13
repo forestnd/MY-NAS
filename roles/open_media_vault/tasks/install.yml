@@ -42,3 +42,12 @@
     delay=30
     timeout=60
   tags: reboot
+
+- name: Install openmediavault plugins
+  become_method: sudo
+  apt:
+    name: "{{ plugins_packages }}"
+    state: present
+    force: yes
+  tags: install-plugins
+

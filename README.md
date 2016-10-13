@@ -23,8 +23,8 @@ Run this command to start the process `ansible-playbook -i inventories/inventory
      5. Configuaring ntp time server (max 5)
 2. Openmediavault setup (working on)
      1. Get openmediavault repo info 
-     2. Get openmediavault-extras repo info (working on)
-     3. Install openmediavault (working on)
+     2. Get openmediavault-extras repo info
+     3. Install openmediavault
      4. Configuare openmediavault (working on)
  
  

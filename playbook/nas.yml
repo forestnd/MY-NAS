@@ -6,10 +6,8 @@
     - roles/base
     - roles/open_media_vault
   vars:
-   packages:
+   OMV_packages:
     - openmediavault-keyring
-    - vim
-    - htop
     - postfix
     - openmediavault
    repo:

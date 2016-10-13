@@ -10,6 +10,15 @@
     - openmediavault-keyring
     - postfix
     - openmediavault
+   plugins_packages:
+    - openmediavault-fail2ban
+    - openmediavault-route
+    - openmediavault-lvm2
+    - openmediavault-minidlna
+    - openmediavault-clamav
+    - openmediavault-downloader
+    - openmediavault-couchpotato
+    - openmediavault-sickbeard
    repo:
     - 'deb http://packages.openmediavault.org/public stoneburner main'
    NTPSERVER1: 0.ubuntu.pool.ntp.org

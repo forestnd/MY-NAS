@@ -9,7 +9,7 @@
 - name: Install openmediavault packages and tools
   become_method: sudo
   apt:
-    name: "{{ packages }}"
+    name: "{{ OMV_packages }}"
     state: present
   tags: install-package
 

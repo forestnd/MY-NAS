@@ -40,10 +40,10 @@ Run this command to start the process `ansible-playbook -i inventories/inventory
      1. Media converter (Planning on doing)
      2. Dymamic IP updater (Planning on doing)
  5. Lockdown the NAS server (Planning on doing)
-     1. Disable root user
-     2. Enable Firewall
-     3. Lock down all ports
-     4. Enable ports
+     1. Disable root user (Planning on doing)
+     2. Enable Firewall (Planning on doing)
+     3. Lock down all ports (Planning on doing)
+     4. Enable ports (Planning on doing)
         1. 80
         2. 443
         

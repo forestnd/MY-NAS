@@ -25,9 +25,20 @@ Run this command to start the process `ansible-playbook -i inventories/inventory
      1. Get openmediavault repo info 
      2. Get openmediavault-extras repo info
      3. Install openmediavault
-     4. Configuare openmediavault (working on)
-3. Modife Openmediavault interface
-4. Add extra items for NAS
+     4. Installing extras
+         1. openmediavault-fail2ban
+         2. openmediavault-route
+         3. openmediavault-lvm2
+         4. openmediavault-minidlna
+         5. openmediavault-clamav
+         6. openmediavault-downloader
+         7. openmediavault-couchpotato
+         8. openmediavault-sickbeard
+     5. Configuare openmediavault (working on)
+3. Modifeing Openmediavault interface (Planning on doing)
+4. Add extra items for NAS (Planning on doing)
+     1. Media converter (Planning on doing)
+     2. Dymamic IP updater (Planning on doing)
  
  
  

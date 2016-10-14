@@ -1,4 +1,4 @@
-# openmediavault-NAS
+# MY-NAS
 
 ## This project
 
@@ -26,6 +26,8 @@ Run this command to start the process `ansible-playbook -i inventories/inventory
      2. Get openmediavault-extras repo info
      3. Install openmediavault
      4. Configuare openmediavault (working on)
+3. Modife Openmediavault interface
+4. Add extra items for NAS
  
  
  

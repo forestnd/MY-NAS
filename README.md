@@ -39,6 +39,13 @@ Run this command to start the process `ansible-playbook -i inventories/inventory
 4. Add extra items for NAS (Planning on doing)
      1. Media converter (Planning on doing)
      2. Dymamic IP updater (Planning on doing)
- 
+ 5. Lockdown the NAS server (Planning on doing)
+     1. Disable root user
+     2. Enable Firewall
+     3. Lock down all ports
+     4. Enable ports
+        1. 80
+        2. 443
+        
  
  

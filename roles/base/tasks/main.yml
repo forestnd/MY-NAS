@@ -46,20 +46,12 @@
     timeout=60
   tags: reboot
 
-#Make sure the packages are uptodate
-- name: Make sure all packages are up-to-date
-  become_method: sudo
-  apt:
-    upgrade: dist
-    update_cache: yes
-  tags: install-package
-
-
 - name: Install NTP
   become_method: sudo
   apt:
     name: "ntp"
     state: present
+    force: yes
   tags: install-package (NTP)
 
 

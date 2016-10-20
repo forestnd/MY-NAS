@@ -42,7 +42,7 @@
     wait_for
     host={{ ansible_default_ipv4.address }}
     state=started
-    delay=30
+    delay=20
     timeout=60
   tags: reboot
 

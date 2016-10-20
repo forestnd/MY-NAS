@@ -10,6 +10,25 @@
     - openmediavault-keyring
     - postfix
     - openmediavault
+   OMV_repos:
+    - enable
+    - testing
+    - vbox
+    - plex
+    - greyhole
+    - vdr
+    - miller
+    - millertesting
+    - btsync
+    - vpn
+    - zfs
+    - gluster
+    - mono
+    - monotesting
+    - docker
+    - dockertesting
+    - hwraid
+    - beta
    plugins_packages:
     - openmediavault-fail2ban
     - openmediavault-route

@@ -43,6 +43,33 @@
     timeout=60
   tags: reboot
 
+- name: Enable extra packages
+  shell: "omv-config --modify /config/system/omvextrasorg/{{ item }} 1"
+  with_items: '{{ OMV_repos }}'
+  tags: OMV_repos
+
+- name: Update apt cahce
+  become: yes
+  shell: apt-get update
+  tags: OMV_repos
+
+- name: Reboot omv node
+  become: yes
+  shell: sleep 2 && shutdown -r now
+  async: 1
+  poll: 0
+  ignore_errors: true
+  tags: reboot
+
+- name: Waiting for omv node to come back
+  become: false
+  local_action:
+    wait_for
+    host={{ ansible_default_ipv4.address }}
+    state=started
+    delay=30
+    timeout=60
+  tags: reboot
 - name: Install openmediavault plugins
   become_method: sudo
   apt:

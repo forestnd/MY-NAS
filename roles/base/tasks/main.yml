@@ -14,7 +14,7 @@
   lineinfile: 
     dest: /etc/hosts
     regexp: '^127\.0\.0\.1'
-    line: '127.0.0.1 {{ ansible_hostname }}'     
+    line: '127.0.0.1 {{ servername }}'     
   tags: pre-configure
 
 #set network settigs
@@ -36,7 +36,7 @@
   ignore_errors: true
   tags: reboot
 
-- name: Waiting {{ ansible_hostname }} to come back up
+- name: Waiting {{ servername }} to come back up
   become: false
   local_action:
     wait_for

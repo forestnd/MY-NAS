@@ -5,7 +5,8 @@
   roles:
     - roles/base
     - roles/open_media_vault
-  vars:
+  vars:   	
+   servername: my-nas
    OMV_packages:
     - openmediavault-keyring
     - postfix

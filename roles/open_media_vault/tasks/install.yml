@@ -54,6 +54,10 @@
   with_items: '{{ OMV_repos }}'
   tags: OMV_repos
 
+- name: RPM repo
+  template: src={{role_path}}/templates/omv-extras-org-stoneburner.list.j2 dest=/etc/apt/sources.list.d/omv-extras-org-stoneburner.list
+  tags: repos
+
 - name: Update apt cahce
   become: yes
   shell: apt-get update

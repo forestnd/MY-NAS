@@ -59,8 +59,8 @@
   tags: repos
 
 - name: Update apt cahce
-  become: yes
-  shell: apt-get update
+  become: yes  
+  apt: upgrade=dist
   tags: OMV_repos
 
 - name: Reboot omv node

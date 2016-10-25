@@ -68,3 +68,14 @@
   poll: 0
   ignore_errors: true
   tags: reboot
+
+
+- name: Update apt cahce
+  become: yes
+  apt:
+   upgrade: dist 
+   force: yes	
+  tags: repo-update
+
+
+

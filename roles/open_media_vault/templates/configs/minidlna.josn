@@ -1,0 +1,9 @@
+{
+'enable': '0', 
+ 'name': 'openMediavault Test', 
+ 'port': '8200', 'strict': '1', 
+ 'tivo': '0', 
+ 'rootcontainer': '.',
+ 'loglevel': 'error', 
+ 'shares': ''
+}

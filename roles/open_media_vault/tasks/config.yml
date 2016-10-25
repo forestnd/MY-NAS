@@ -35,6 +35,10 @@
   shell: "omv-config --modify /config/services/clamav/enable 1"
   tags: Setup clamav
 
+- name: Getting Minidlna Config
+  template: src={{role_path}}/templates/configs/mindlna.josn dest=/tmp/mindlna.josn
+  tags: repos
+
 - name: Minidlna Config
-  shell: omv-config -m /config/services/minidlna '{"enable": "0","name": "openMediavault Test","port": "8200","strict": "1","tivo": "0","rootcontainer": ".","loglevel": "error", "shares": ""}'
+  shell: omv-config -m /config/services/minidlna < /tmp/mindlna.josn
   tags: Setup minidlna

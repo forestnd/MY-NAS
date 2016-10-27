@@ -42,3 +42,20 @@
 - name: Minidlna Config
   shell: omv-config -m /config/services/minidlna < /tmp/mindlna.josn
   tags: Setup minidlna
+
+#####Adding Groups########
+- name: Adding users
+  group: 
+   name: somegroup 
+   state: present
+  with_dict: "{{user_groups}}"   
+
+#####Adding Users########
+- name: Adding users
+  state: present
+  user: 
+   name: {{item.key}} 
+   groups: {{item.value.groups}}
+   password: {{item.value.password}} 
+   append: yes
+  with_dict: "{{users_accounts}}"

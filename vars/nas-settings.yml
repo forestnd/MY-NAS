@@ -1,0 +1,40 @@
+servername: my-nas
+OMV_packages:
+- openmediavault-keyring
+- postfix
+- openmediavault
+OMV_repos:
+- enable
+- testing
+- vbox
+- plex
+- greyhole
+- vdr
+- miller
+- millertesting
+- btsync
+- vpn
+- zfs
+- gluster
+- mono
+- monotesting
+- docker
+- dockertesting
+- hwraid
+- beta
+plugins_packages:
+- openmediavault-fail2ban
+- openmediavault-route
+- openmediavault-lvm2
+- openmediavault-minidlna
+- openmediavault-clamav
+- openmediavault-downloader
+- openmediavault-couchpotato
+- openmediavault-sickbeard
+repo:
+- 'deb http://packages.openmediavault.org/public stoneburner main'
+NTPSERVER1: 0.ubuntu.pool.ntp.org
+NTPSERVER2: 
+NTPSERVER3: 
+NTPSERVER4: 
+NTPSERVER5:

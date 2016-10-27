@@ -74,7 +74,8 @@
   become: yes
   apt:
    upgrade: dist 
-   force: yes	
+   force: yes
+   cache_valid_time: 86400	
   tags: repo-update
 
 

@@ -15,9 +15,10 @@
   with_items: '{{ repo }}'
   tags: repo
 
-#- name: update packages
-#  become_method: sudo
-#  apt:
-#    upgrade: dist
-#  tags: install-package
+- name: update packages
+  become_method: sudo
+  apt:
+    upgrade: dist
+    cache_valid_time: 86400
+  tags: install-package
 

@@ -1,0 +1,5 @@
+users_accounts:
+  <Username>:
+    first: <First Name>
+    last: <Last Name>
+    key: <SSH key>

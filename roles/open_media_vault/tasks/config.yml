@@ -40,7 +40,7 @@
   tags: repos
 
 - name: Minidlna Config
-  shell: omv-config -m /config/services/minidlna < /tmp/mindlna.josn
+  shell: omv-config -m /config/services/minidlna "`cat /tmp/mindlna.josn`"
   tags: Setup minidlna
 
 #####Adding Groups########

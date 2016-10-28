@@ -90,11 +90,11 @@
 
 
 #####Adding Groups########
-- name: Adding users
+- name: Adding groups
   group: 
-   name: somegroup 
+   name: "{{ item }}" 
    state: present
-  with_dict: "{{user_groups}}"   
+  with_items: "{{ user_groups }}"   
 
 #####Adding Users########
 - name: Adding users

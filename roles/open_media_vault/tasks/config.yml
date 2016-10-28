@@ -98,10 +98,9 @@
 
 #####Adding Users########
 - name: Adding users
-  state: present
   user: 
-   name: {{item.key}} 
-   groups: {{item.value.groups}}
-   password: {{item.value.password}} 
+   name: "{{ item.key }}" 
+   groups: "{{ item.value.groups }}"
    append: yes
-  with_dict: "{{users_accounts}}"
+   password: "{{ item.value.password }}" 
+  with_dict: "{{ users_accounts }}"

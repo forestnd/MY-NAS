@@ -76,18 +76,13 @@
   shell: omv-config -m /config/services/sickbeard "`cat /tmp/sickbeard.josn`"
   tags: Setup sickbeard
 
-- name: lvm2 Config
-  shell: omv-config -m /config/services/lvm2 "`cat /tmp/lvm2.josn`"
-  tags: Setup lvm2
+#- name: lvm2 Config
+#  shell: omv-config -m /config/services/lvm2 "`cat /tmp/lvm2.josn`"
+#  tags: Setup lvm2
 
-- name: route Config
-  shell: omv-config -m /config/services/route "`cat /tmp/route.josn`"
-  tags: Setup route
-
-
-
-
-
+#- name: route Config
+#  shell: omv-config -m /config/services/route "`cat /tmp/route.josn`"
+#  tags: Setup route
 
 #####Adding Groups########
 - name: Adding groups

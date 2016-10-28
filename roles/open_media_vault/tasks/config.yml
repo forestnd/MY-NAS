@@ -33,7 +33,7 @@
 
 - name: Getting downloader Config
   template: src={{role_path}}/templates/configs/downloader.josn dest=/tmp/downloader.josn
- tags: Setup downloader
+  tags: Setup downloader
 
 - name: Getting fail2ban Config
   template: src={{role_path}}/templates/configs/fail2ban.josn dest=/tmp/fail2ban.josn

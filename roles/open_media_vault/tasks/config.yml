@@ -63,7 +63,7 @@
 - name: couchpotato Config
   shell: omv-config -m /config/services/couchpotato "`cat /tmp/couchpotato.josn`"
   tags: Setup couchpotato
-######
+
 - name: downloader Config
   shell: omv-config -m /config/services/downloader "`cat /tmp/downloader.josn`"
   tags: Setup downloader

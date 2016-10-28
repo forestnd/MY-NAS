@@ -19,29 +19,75 @@
 #  shell: "omv-config --modify /config/system/time/enable 1"
 #  tags: Setup timezone
 
-- name: Config Clamav (detectbrokenexecutables)
-  shell: "omv-config --modify /config/services/clamav/clamd/detectbrokenexecutables 1"
-  tags: Setup clamav
-
-- name: Config Clamav (followdirectorysymlinks)
-  shell: "omv-config --modify /config/services/clamav/clamd/followdirectorysymlinks 1"
-  tags: Setup clamav
-
-- name: Config Clamav (followfilesymlinks)
-  shell: "omv-config --modify /config/services/clamav/clamd/followfilesymlinks 1"
-  tags: Setup clamav
-
-- name: Enable Clamav
-  shell: "omv-config --modify /config/services/clamav/enable 1"
-  tags: Setup clamav
-
 - name: Getting Minidlna Config
-  template: src={{role_path}}/templates/configs/mindlna.josn dest=/tmp/mindlna.josn
-  tags: repos
+  template: src={{role_path}}/templates/configs/minidlna.josn dest=/tmp/minidlna.josn
+  tags: Setup minidlna
+
+- name: Getting clamav Config
+  template: src={{role_path}}/templates/configs/clamav.josn dest=/tmp/clamav.josn
+  tags: Setup clamav
+
+- name: Getting couchpotato Config
+  template: src={{role_path}}/templates/configs/couchpotato.josn dest=/tmp/couchpotato.josn
+  tags: Setup couchpotato
+
+- name: Getting downloader Config
+  template: src={{role_path}}/templates/configs/downloader.josn dest=/tmp/downloader.josn
+ tags: Setup downloader
+
+- name: Getting fail2ban Config
+  template: src={{role_path}}/templates/configs/fail2ban.josn dest=/tmp/fail2ban.josn
+  tags: Setup fail2ban
+
+- name: Getting lvm2 Config
+  template: src={{role_path}}/templates/configs/lvm2.josn dest=/tmp/lvm2.josn
+  tags: Setup lvm2
+
+- name: Getting route Config
+  template: src={{role_path}}/templates/configs/route.josn dest=/tmp/route.josn
+  tags: Setup route
+
+- name: Getting sickbeard Config
+  template: src={{role_path}}/templates/configs/sickbeard.josn dest=/tmp/sickbeard.josn
+  tags: Setup sickbeard
+
 
 - name: Minidlna Config
-  shell: omv-config -m /config/services/minidlna "`cat /tmp/mindlna.josn`"
+  shell: omv-config -m /config/services/minidlna "`cat /tmp/minidlna.josn`"
   tags: Setup minidlna
+
+- name: Clamav Config
+  shell: omv-config -m /config/services/clamav "`cat /tmp/clamav.josn`"
+  tags: Setup clamav
+
+- name: couchpotato Config
+  shell: omv-config -m /config/services/couchpotato "`cat /tmp/couchpotato.josn`"
+  tags: Setup couchpotato
+######
+- name: downloader Config
+  shell: omv-config -m /config/services/downloader "`cat /tmp/downloader.josn`"
+  tags: Setup downloader
+
+- name: fail2ban Config
+  shell: omv-config -m /config/services/fail2ban "`cat /tmp/fail2ban.josn`"
+  tags: Setup fail2ban
+
+- name: sickbeard Config
+  shell: omv-config -m /config/services/sickbeard "`cat /tmp/sickbeard.josn`"
+  tags: Setup sickbeard
+
+- name: lvm2 Config
+  shell: omv-config -m /config/services/lvm2 "`cat /tmp/lvm2.josn`"
+  tags: Setup lvm2
+
+- name: route Config
+  shell: omv-config -m /config/services/route "`cat /tmp/route.josn`"
+  tags: Setup route
+
+
+
+
+
 
 #####Adding Groups########
 - name: Adding users

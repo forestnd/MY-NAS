@@ -1,0 +1,24 @@
+{
+    "enable": "1",
+    "quarantine.sharedfolderref": "",
+    "clamd": {
+        "logclean": "0",
+        "scanpe": "1",
+        "scanole2": "1",
+        "scanhtml": "1",
+        "scanpdf": "1",
+        "scanelf": "1",
+        "scanarchive": "1",
+        "detectbrokenexecutables": "1",
+        "algorithmicdetection": "1",
+        "followdirectorysymlinks": "1",
+        "followfilesymlinks": "1",
+        "detectpua": "0",
+        "extraoptions": ""
+    },
+    "freshclam": {
+        "enable": "1",
+        "checks": "24"
+    },
+    "jobs": ""
+}

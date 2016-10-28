@@ -1,0 +1,10 @@
+{
+    "enable": "0",
+    "ssl": "0",
+    "ppass": "0",
+    "repo": "Please choose a repository",
+    "branch": "Please choose a branch",
+    "repo2": "Please choose a repository",
+    "branch2": "Please choose a branch",
+    "show_tab": "0"
+}

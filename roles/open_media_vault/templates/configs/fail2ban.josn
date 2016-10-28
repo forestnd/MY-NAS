@@ -1,0 +1,83 @@
+{
+    "enable": "0",
+    "ignoreip": "127.0.0.1",
+    "findtime": "604800",
+    "bantime": "604800",
+    "maxretry": "3",
+    "destemail": "root@localhost",
+    "action": "action_mwl",
+    "jails": {
+        "jail": [
+            {
+                "uuid": "36b96e6c-9187-4b93-b0c6-05c6d3e29dc3",
+                "enable": "0",
+                "name": "ssh",
+                "port": "ssh",
+                "maxretry": "3",
+                "bantime": "-1",
+                "filter": "sshd",
+                "logpath": "\/var\/log\/auth.log"
+            },
+            {
+                "uuid": "59650e01-5e07-4076-9b15-ce352f4b4356",
+                "enable": "0",
+                "name": "ssh-ddos",
+                "port": "ssh",
+                "maxretry": "3",
+                "bantime": "-1",
+                "filter": "sshd-ddos",
+                "logpath": "\/var\/log\/auth.log"
+            },
+            {
+                "uuid": "645ae684-0950-4fcf-92fc-eba1b88775b1",
+                "enable": "0",
+                "name": "apache-noscript",
+                "port": "httpd,httpds",
+                "maxretry": "3",
+                "bantime": "-1",
+                "filter": "apache-noscript",
+                "logpath": "\/var\/log\/apache*\/*error.log"
+            },
+            {
+                "uuid": "6e3a7d25-326c-4dc8-bc05-63f303a62b60",
+                "enable": "0",
+                "name": "apache-404",
+                "port": "httpd,httpds",
+                "maxretry": "3",
+                "bantime": "-1",
+                "filter": "apache-404",
+                "logpath": "\/var\/log\/apache*\/*error.log"
+            },
+            {
+                "uuid": "6e3a7d25-326c-4dc8-bc05-63f303a62b21",
+                "enable": "0",
+                "name": "proftp",
+                "port": "ftp,ftp-data,ftps,ftps-data",
+                "maxretry": "3",
+                "bantime": "-1",
+                "filter": "proftpd",
+                "logpath": "\/var\/log\/proftpd\/proftpd.log"
+            },
+            {
+                "uuid": "7e9a7d35-326c-4dc8-bc05-35f308a62b78",
+                "enable": "0",
+                "name": "owncloud",
+                "port": "http,https,8443",
+                "maxretry": "3",
+                "bantime": "-1",
+                "filter": "owncloud",
+                "logpath": "\/MyPath\/owncloud.log"
+            },
+            {
+                "uuid": "4e3a2d25-326c-4dc8-bc05-22f303a62b75",
+                "enable": "0",
+                "name": "nginx-404",
+                "port": "http,https",
+                "maxretry": "3",
+                "bantime": "-1",
+                "filter": "nginx-404",
+                "logpath": "\/var\/log\/nginx*\/*access*.log"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1 @@
+{"response":null,"error":{"code":3003,"message":"Failed to get configuration (xpath=\/config\/services\/lvm2)","trace":"exception 'OMVException' with message 'Failed to get configuration (xpath=\/config\/services\/lvm2)' in \/usr\/sbin\/omv-config:140\nStack trace:\n#0 {main}"}}

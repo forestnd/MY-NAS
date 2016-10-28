@@ -8,7 +8,7 @@ users_accounts:
   nigel_d:
     key: 1234567890
     password: password
-    groups: ssh
+    groups: ssh,sudo
 
 #Adding groups
 user_groups:

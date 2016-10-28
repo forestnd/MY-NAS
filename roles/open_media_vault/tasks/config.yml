@@ -51,7 +51,6 @@
   template: src={{role_path}}/templates/configs/sickbeard.josn dest=/tmp/sickbeard.josn
   tags: Setup sickbeard
 
-
 - name: Minidlna Config
   shell: omv-config -m /config/services/minidlna "`cat /tmp/minidlna.josn`"
   tags: Setup minidlna
@@ -98,4 +97,15 @@
    groups: "{{ item.value.groups }}"
    append: yes
    password: "{{ item.value.password }}" 
+  with_dict: "{{ users_accounts }}"
+
+- name: Adding ssh keys
+  file: 
+   path: /home/{{ item.key }}/.ssh 
+   state: directory
+  with_dict: "{{ users_accounts }}"
+
+- copy: 
+   content: "{{ item.value.key }}" 
+   dest: /home/{{ item.key }}/.ssh/authorized_keys
   with_dict: "{{ users_accounts }}"

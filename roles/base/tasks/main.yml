@@ -71,11 +71,12 @@
 
 
 - name: Update apt cahce
+  ignore_errors: yes
   become: yes
   apt:
    upgrade: dist 
    force: yes
-   cache_valid_time: 86400	
+   cache_valid_time: 86400
   tags: repo-update
 
 

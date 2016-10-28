@@ -54,16 +54,16 @@
   with_items: '{{ OMV_repos }}'
   tags: OMV_repos
 
-- name: RPM repo
+- name: Addng extra repo list
+  become: yes
   template: src={{role_path}}/templates/omv-extras-org-stoneburner.list.j2 dest=/etc/apt/sources.list.d/omv-extras-org-stoneburner.list
-  tags: repos
+  tags: OMV_repos
 
 - name: Update apt cahce
   become: yes
   apt:
-   upgrade: dist 
+   update_cache: yes 
    force: yes
-   cache_valid_time: 86400	
   tags: OMV_repos
 
 - name: Reboot omv node

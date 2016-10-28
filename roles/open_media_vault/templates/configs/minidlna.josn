@@ -1,9 +1,10 @@
 {
-'enable': '0', 
- 'name': 'openMediavault Test', 
- 'port': '8200', 'strict': '1', 
- 'tivo': '0', 
- 'rootcontainer': '.',
- 'loglevel': 'error', 
- 'shares': ''
+    "enable": "0",
+    "name": "MiniDLNA Server on OpenMediaVault",
+    "port": "8200",
+    "strict": "0",
+    "tivo": "2",
+    "shares": "",
+    "loglevel": "error",
+    "rootcontainer": "."
 }

@@ -1,16 +1,14 @@
 #THis is where you add uses to the sysetm
-
 users_accounts:
 ##example
 #  <Username>: (the users username)
 #    key: The SSH key (public part)
 #    password: the user password (needs to be encrupted)
 #    groups: the groups you want them in with a , seperaating them
-
-  <Username>:
-    key: <SSH key>
-    password: <password>
-    groups: <groups>
+  nigel_d:
+    key: 1234567890
+    password: password
+    groups: ssh
 
 #Adding groups
 user_groups:

@@ -35,18 +35,6 @@
   template: src={{role_path}}/templates/configs/downloader.josn dest=/tmp/downloader.josn
   tags: Setup downloader
 
-- name: Getting fail2ban Config
-  template: src={{role_path}}/templates/configs/fail2ban.josn dest=/tmp/fail2ban.josn
-  tags: Setup fail2ban
-
-- name: Getting lvm2 Config
-  template: src={{role_path}}/templates/configs/lvm2.josn dest=/tmp/lvm2.josn
-  tags: Setup lvm2
-
-- name: Getting route Config
-  template: src={{role_path}}/templates/configs/route.josn dest=/tmp/route.josn
-  tags: Setup route
-
 - name: Getting sickbeard Config
   template: src={{role_path}}/templates/configs/sickbeard.josn dest=/tmp/sickbeard.josn
   tags: Setup sickbeard
@@ -67,21 +55,9 @@
   shell: omv-config -m /config/services/downloader "`cat /tmp/downloader.josn`"
   tags: Setup downloader
 
-- name: fail2ban Config
-  shell: omv-config -m /config/services/fail2ban "`cat /tmp/fail2ban.josn`"
-  tags: Setup fail2ban
-
 - name: sickbeard Config
   shell: omv-config -m /config/services/sickbeard "`cat /tmp/sickbeard.josn`"
   tags: Setup sickbeard
-
-#- name: lvm2 Config
-#  shell: omv-config -m /config/services/lvm2 "`cat /tmp/lvm2.josn`"
-#  tags: Setup lvm2
-
-#- name: route Config
-#  shell: omv-config -m /config/services/route "`cat /tmp/route.josn`"
-#  tags: Setup route
 
 #####Adding Groups########
 - name: Adding groups
@@ -99,13 +75,14 @@
    password: "{{ item.value.password }}" 
   with_dict: "{{ users_accounts }}"
 
-- name: Adding ssh keys
+- name: Creating SSH-key folder
   file: 
    path: /home/{{ item.key }}/.ssh 
    state: directory
   with_dict: "{{ users_accounts }}"
 
-- copy: 
+- name: Creating SSH-key file
+  copy: 
    content: "{{ item.value.key }}" 
    dest: /home/{{ item.key }}/.ssh/authorized_keys
   with_dict: "{{ users_accounts }}"

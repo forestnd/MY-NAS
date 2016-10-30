@@ -1,15 +1,11 @@
 ---
-#- name: Set network (hostname)
-#  shell: omv-config --modify /config/system/network '{"hostname": "{{ servername }}","domainname": "","interfaces": "","iptables": ""}'
-#  tags: Setup network
-
 - name: Set network (enable hostname)
   shell: "omv-config --modify /config/system/omvextrasorg/modules/hostname 1"
   tags: Setup network
 
-#- name: Seting timezone to UTC
-#  shell: omv-config --modify /config/system/time/timezone "UTC"
-#  tags: Setup timezone
+- name: Getting network Config
+  template: src={{role_path}}/templates/configs/network.josn dest=/tmp/network.josn
+  tags: Setup Network
 
 - name: Getting time Config
   template: src={{role_path}}/templates/configs/time.josn dest=/tmp/time.josn
@@ -59,6 +55,9 @@
   shell: omv-config -m /config/system/time "`cat /tmp/time.josn`"
   tags: Setup time
 
+- name: Network Config
+  shell: omv-config -m /config/system/network "`cat /tmp/network.josn`"
+  tags: Network time
 
 #####Adding Groups########
 - name: Adding groups
@@ -81,15 +80,15 @@
   file: 
    path: /home/{{ item.key }}/.ssh 
    state: directory
-   owner: item.key 
-   group: item.key
+   owner: "{{ item.key }}"
+   group: "{{ item.key }}"
   with_dict: "{{ users_accounts }}"
 
 - name: Adding ssh keys
   copy: 
    content: "{{ item.value.key }}" 
    dest: /home/{{ item.key }}/.ssh/authorized_keys
-   owner: item.key 
-   group: item.key 
+   owner: "{{ item.key }}"
+   group: "{{ item.key }}"
    mode: 0600	
   with_dict: "{{ users_accounts }}"

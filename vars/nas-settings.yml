@@ -38,3 +38,24 @@ NTPSERVER2:
 NTPSERVER3: 
 NTPSERVER4: 
 NTPSERVER5:
+########module vales########
+clamav_settings:
+  enable: "1"
+  logclean: "1" 
+  scanpe: "1"
+  scanole2: "1"
+  scanhtml: "1"
+  scanpdf: "1"
+  scanelf: "1"
+  scanarchive: "1"
+  detectbrokenexecutables: "1"
+  algorithmicdetection: "1"
+  ollowdirectorysymlinks: "1"
+  followfilesymlinks: "1"
+  followdirectorysymlinks: "1"
+  detectpua: "1"
+  extraoptions: ""
+  freshclam:
+    enable: "1"
+    checks: "24"
+

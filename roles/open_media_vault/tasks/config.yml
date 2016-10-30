@@ -11,13 +11,9 @@
 #  shell: omv-config --modify /config/system/time/timezone "UTC"
 #  tags: Setup timezone
 
-#- name: Set Time zone server
-#  shell: omv-config --modify /config/system/time/timeservers "{{ NTPSERVER1 }}"
-#  tags: Setup timezone
-
-#- name: Enable NTP
-#  shell: "omv-config --modify /config/system/time/enable 1"
-#  tags: Setup timezone
+- name: Getting time Config
+  template: src={{role_path}}/templates/configs/time.josn dest=/tmp/time.josn
+  tags: Setup time
 
 - name: Getting Minidlna Config
   template: src={{role_path}}/templates/configs/minidlna.josn dest=/tmp/minidlna.josn
@@ -59,6 +55,11 @@
   shell: omv-config -m /config/services/sickbeard "`cat /tmp/sickbeard.josn`"
   tags: Setup sickbeard
 
+- name: Time Config
+  shell: omv-config -m /config/system/time "`cat /tmp/time.josn`"
+  tags: Setup time
+
+
 #####Adding Groups########
 - name: Adding groups
   group: 
@@ -75,14 +76,20 @@
    password: "{{ item.value.password }}" 
   with_dict: "{{ users_accounts }}"
 
-- name: Creating SSH-key folder
+###Adding SSh-keys###
+- name: creaeting sshkey folder
   file: 
    path: /home/{{ item.key }}/.ssh 
    state: directory
+   owner: item.key 
+   group: item.key
   with_dict: "{{ users_accounts }}"
 
-- name: Creating SSH-key file
+- name: Adding ssh keys
   copy: 
    content: "{{ item.value.key }}" 
    dest: /home/{{ item.key }}/.ssh/authorized_keys
+   owner: item.key 
+   group: item.key 
+   mode: 0600	
   with_dict: "{{ users_accounts }}"

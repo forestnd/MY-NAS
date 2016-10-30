@@ -1,0 +1,7 @@
+{
+    "timezone": "Europe\/London",
+    "ntp": {
+        "enable": "0",
+        "timeservers": "pool.ntp.org"
+    }
+}

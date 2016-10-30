@@ -2,4 +2,4 @@
 /inventories/inventory.yml
 /ansible.cfg
 /ansible.log
-/vars/user_accounts.yml
+/vars/useraccounts.yml

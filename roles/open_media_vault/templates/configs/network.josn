@@ -1,0 +1,6 @@
+{
+    "hostname": "{{ servername }}",
+    "domainname": "",
+    "interfaces": "",
+    "iptables": ""
+}

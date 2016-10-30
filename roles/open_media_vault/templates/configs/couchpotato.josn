@@ -1,6 +1,6 @@
 {
-    "enable": "0",
-    "showtab": "0",
-    "branch": "",
-    "repo": ""
+    "enable": "{{ couchpotato.enable }}",
+    "showtab": "{{ couchpotato.showtab }}",
+    "branch": "{{ couchpotato.branch }}",
+    "repo": "{{ couchpotato.repo }}"
 }

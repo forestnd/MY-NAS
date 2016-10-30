@@ -1,7 +1,7 @@
 {
-    "timezone": "Europe\/London",
+    "timezone": "{{ time.timezone }}",
     "ntp": {
-        "enable": "0",
-        "timeservers": "pool.ntp.org"
+        "enable": "{{ time.enable }}",
+        "timeservers": "{{ NTPSERVER1 }}"
     }
 }

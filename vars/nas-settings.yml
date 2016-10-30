@@ -58,4 +58,35 @@ clamav_settings:
   freshclam:
     enable: "1"
     checks: "24"
-
+time:
+  enable: "1"
+  timezone: '"Europe\/London"'
+minidlna:
+  enable: "0"
+  name: "Media Player on {{ servername }}"
+  port: "8200"
+  strict: "1"
+  tivo: "1"
+  shares: ""
+  loglevel: "error"
+  rootcontainer: "."
+couchpotato:
+  enable: "0"
+  showtab: "0"
+  branch: ""
+  repo: ""
+sickbeard:
+  enable: "0"
+  ssl: "0"
+  ppass: "0"
+  repo: '"https:\/\/github.com\/midgetspy\/Sick-Beard.git"'
+  branch: "master"
+  repo2: "Please choose a repository"
+  branch2: "Please choose a branch"
+  show_tab: "0"
+  port: "8081"
+  forks: ""
+  newinstance: "0"
+  newinstenable: "0"
+  show_tab: "0"
+    

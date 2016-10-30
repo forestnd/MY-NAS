@@ -1,10 +1,10 @@
 {
-    "enable": "0",
-    "name": "MiniDLNA Server on OpenMediaVault",
-    "port": "8200",
-    "strict": "0",
-    "tivo": "2",
-    "shares": "",
-    "loglevel": "error",
-    "rootcontainer": "."
+    "enable": "{{ minidlna.enable }}",
+    "name": "{{ minidlna.name }}",
+    "port": "{{ minidlna.port }}",
+    "strict": "{{ minidlna.strict }}",
+    "tivo": "{{ minidlna.tivo }}",
+    "shares": "{{ minidlna.shares }}",
+    "loglevel": "{{ minidlna.loglevel }}",
+    "rootcontainer": "{{ minidlna.rootcontainer }}"
 }

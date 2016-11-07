@@ -1,6 +1,6 @@
 {
     "enable": "{{ sickbeard.enable }}",
-    "show_tab": "{{ sickbeard.show_tab }}"
+    "show_tab": "{{ sickbeard.show_tab }}",
     "newinstance": "{{ sickbeard.newinstance }}",
     "newinstenable": " {{ sickbeard.newinstenable }}",
     "ppass": "{{ sickbeard.ppass }}",

@@ -4,7 +4,7 @@
     "branch": "{{ couchpotato.branch }}",
     "repo": "{{ couchpotato.repo }}",
     "port": "{{ couchpotato.port }}",
-    "mntentref": "{{ couchpotato.mntentref }}",
+    "mntentref": "",
     "path": "",
     "forks": ""
 }

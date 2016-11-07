@@ -76,7 +76,6 @@ couchpotato:
   branch: 'master'
   repo: 'https:\/\/github.com\/RuudBurger\/CouchPotatoServer.git'
   port: "5050"
-  mntentref: "ae7e5e92-2ce7-411b-8f31-763ccc4a212e"
 sickbeard:
   enable: "0"
   ssl: "0"
@@ -90,4 +89,3 @@ sickbeard:
   newinstance: "0"
   newinstenable: "0"
   show_tab: "0"
-    

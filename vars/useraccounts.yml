@@ -5,14 +5,9 @@ users_accounts:
 #    key: The SSH key (public part)
 #    password: the user password (needs to be encrupted)
 #    groups: the groups you want them in with a , seperaating them
-  nigel_d:
-    key: 1234567890
-    password: password
-    groups: ssh
+
 
 #Adding groups
 user_groups:
 #example
 #- groupname
-- backup
-

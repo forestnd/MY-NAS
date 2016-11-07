@@ -11,7 +11,7 @@ Use the example inventories.yml file
 
 add the ip address or hostname of the server using
 
-Run this command to start the process `ansible-playbook -i inventories/inventory.yml.example playbook/nas.yml`
+Run this command to start the process `ansible-playbook playbook/nas.yml`
 
 
 ## Each Ansible Role does
@@ -44,6 +44,7 @@ Run this command to start the process `ansible-playbook -i inventories/inventory
      1. minidlna
      2. sickbeard
      3. couchpotato
+     4. systemlogs
 6. Lockdown the NAS server (Planning on doing)
      1. Disable root user (Planning on doing)
      2. Enable Firewall (Planning on doing)
@@ -51,6 +52,11 @@ Run this command to start the process `ansible-playbook -i inventories/inventory
      4. Enable ports (Planning on doing)
         1. 80
         2. 443
-        
+        3. 22
+        4. samba ports
+        5. minidlna-port
+        6. sickbeard-port
+        7. couchpotato-port
+
  
  

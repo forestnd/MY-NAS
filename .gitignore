@@ -1,3 +1,4 @@
 /facts
 /inventories/inventory.yml
 /ansible.log
+/vars/useraccounts.yml

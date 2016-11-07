@@ -6,5 +6,5 @@
     - roles/base
     - roles/open_media_vault
   vars_files:
-    - vars/user_accounts.yml
-    - vars/nas-settings.yml
+    - ../vars/useraccounts.yml
+    - ../vars/nas-settings.yml

@@ -60,7 +60,7 @@ clamav_settings:
     checks: "24"
 time:
   enable: "1"
-  timezone: '"Europe\/London"'
+  timezone: 'Europe\/London'
 minidlna:
   enable: "0"
   name: "Media Player on {{ servername }}"
@@ -79,7 +79,7 @@ sickbeard:
   enable: "0"
   ssl: "0"
   ppass: "0"
-  repo: '"https:\/\/github.com\/midgetspy\/Sick-Beard.git"'
+  repo: 'https:\/\/github.com\/midgetspy\/Sick-Beard.git'
   branch: "master"
   repo2: "Please choose a repository"
   branch2: "Please choose a branch"

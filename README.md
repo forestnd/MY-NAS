@@ -35,7 +35,7 @@ Run this command to start the process `ansible-playbook -i inventories/inventory
          7. openmediavault-couchpotato
          8. openmediavault-sickbeard
      5. Configuare openmediavault (working on)
-     6. Adding users to nas (working on)
+     6. Adding users to nas
 3. Modifeing Openmediavault interface (Planning on doing)
 4. Add extra items for NAS (Planning on doing)
      1. Media converter (Planning on doing)

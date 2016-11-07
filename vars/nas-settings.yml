@@ -73,8 +73,10 @@ minidlna:
 couchpotato:
   enable: "0"
   showtab: "0"
-  branch: ""
-  repo: ""
+  branch: 'master'
+  repo: 'https:\/\/github.com\/RuudBurger\/CouchPotatoServer.git'
+  port: "5050"
+  mntentref: "ae7e5e92-2ce7-411b-8f31-763ccc4a212e"
 sickbeard:
   enable: "0"
   ssl: "0"
@@ -83,7 +85,6 @@ sickbeard:
   branch: "master"
   repo2: "Please choose a repository"
   branch2: "Please choose a branch"
-  show_tab: "0"
   port: "8081"
   forks: ""
   newinstance: "0"

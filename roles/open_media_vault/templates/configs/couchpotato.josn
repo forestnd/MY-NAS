@@ -2,5 +2,9 @@
     "enable": "{{ couchpotato.enable }}",
     "showtab": "{{ couchpotato.showtab }}",
     "branch": "{{ couchpotato.branch }}",
-    "repo": "{{ couchpotato.repo }}"
+    "repo": "{{ couchpotato.repo }}",
+    "port": "{{ couchpotato.port }}",
+    "mntentref": "{{ couchpotato.mntentref }}",
+    "path": "",
+    "forks": ""
 }

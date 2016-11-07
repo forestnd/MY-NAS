@@ -35,12 +35,16 @@ Run this command to start the process `ansible-playbook -i inventories/inventory
          7. openmediavault-couchpotato
          8. openmediavault-sickbeard
      5. Configuare openmediavault (working on)
-     6. Adding users to nas (working on)
+     6. Adding users to nas
 3. Modifeing Openmediavault interface (Planning on doing)
 4. Add extra items for NAS (Planning on doing)
      1. Media converter (Planning on doing)
      2. Dymamic IP updater (Planning on doing)
- 5. Lockdown the NAS server (Planning on doing)
+5. Setting up logrotate (Planning on doing)
+     1. minidlna
+     2. sickbeard
+     3. couchpotato
+6. Lockdown the NAS server (Planning on doing)
      1. Disable root user (Planning on doing)
      2. Enable Firewall (Planning on doing)
      3. Lock down all ports (Planning on doing)

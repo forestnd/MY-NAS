@@ -21,7 +21,7 @@ Run this command to start the process `ansible-playbook playbook/nas.yml`
      3. Running update on OS is fully up to date
      4. Installing ntp
      5. Configuaring ntp time server (max 5)
-2. Openmediavault setup (working on)
+2. Openmediavault setup
      1. Get openmediavault repo info 
      2. Get openmediavault-extras repo info
      3. Install openmediavault
@@ -34,17 +34,16 @@ Run this command to start the process `ansible-playbook playbook/nas.yml`
          6. openmediavault-downloader
          7. openmediavault-couchpotato
          8. openmediavault-sickbeard
-     5. Configuare openmediavault (working on)
+     5. Configuare openmediavault
      6. Adding users to nas
 3. Modifeing Openmediavault interface (Planning on doing)
 4. Add extra items for NAS (Planning on doing)
      1. Media converter (Planning on doing)
      2. Dymamic IP updater (Planning on doing)
 5. Setting up logrotate (Planning on doing)
-     1. minidlna
-     2. sickbeard
-     3. couchpotato
-     4. systemlogs
+     1. sickbeard
+     2. couchpotato
+     3. systemlogs
 6. Lockdown the NAS server (Planning on doing)
      1. Disable root user (Planning on doing)
      2. Enable Firewall (Planning on doing)
@@ -53,10 +52,7 @@ Run this command to start the process `ansible-playbook playbook/nas.yml`
         1. 80
         2. 443
         3. 22
-        4. samba ports
+        4. samba-ports
         5. minidlna-port
         6. sickbeard-port
         7. couchpotato-port
-
- 
- 

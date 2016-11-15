@@ -1,0 +1,13 @@
+/var/log/sickbeard.log
+{
+	rotate 2
+	weekly
+	maxage 2
+	missingok
+	notifempty
+	compress
+	create 0644 sickbeard users
+	postrotate
+		service sickbeard restart > /dev/null
+	endscript
+}

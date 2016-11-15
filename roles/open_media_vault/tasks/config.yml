@@ -92,3 +92,16 @@
    group: "{{ item.key }}"
    mode: 0600	
   with_dict: "{{ users_accounts }}"
+
+###Configure log rotation###
+##for
+
+#sickbeard
+- name: Getting sickbeard log rate info
+  template: src={{role_path}}/templates/logroate/sickbeard.json dest=/etc/logrotate.d/sickbeard
+  tags: Setup log rate sickbeard
+
+#couchpotato
+- name: Getting couchpotato log rate info
+  template: src={{role_path}}/templates/logroate/couchpotato.json dest=/etc/logrotate.d/couchpotato
+  tags: Setup log rate couchpotato

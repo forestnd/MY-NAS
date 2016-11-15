@@ -40,10 +40,9 @@ Run this command to start the process `ansible-playbook playbook/nas.yml`
 4. Add extra items for NAS (Planning on doing)
      1. Media converter (Planning on doing)
      2. Dymamic IP updater (Planning on doing)
-5. Setting up logrotate (Planning on doing)
+5. Setting up logrotate
      1. sickbeard
      2. couchpotato
-     3. systemlogs
 6. Lockdown the NAS server (Planning on doing)
      1. Disable root user (Planning on doing)
      2. Enable Firewall (Planning on doing)

@@ -7,10 +7,15 @@ using
 ------------
 ## How to run command
 Use the example inventories.yml file
-and add your userinfo "useraccounts.yml.example" to useraccounts.yml
 `mv inventories/inventories.yml.example  inventories/inventories.yml`
 
 add the ip address or hostname of the server using
+
+and add your userinfo vars/useraccounts.yml.example to vars/useraccounts.yml
+
+Note!: to set a password for the user 
+    1. install whois (sudo apt-get install whois)
+    2. mkpasswd --method=sha-512
 
 Run this command to start the process `ansible-playbook playbook/nas.yml`
 

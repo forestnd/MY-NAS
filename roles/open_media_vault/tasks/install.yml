@@ -17,6 +17,7 @@
   apt: 
     deb: "/tmp/openmediavault-omvextrasorg_latest_all.deb"
     force: yes
+    update_cache: yes
   tags: extra
 
 #Config server

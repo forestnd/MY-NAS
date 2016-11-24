@@ -1,6 +1,28 @@
 {
     "hostname": "{{ servername }}",
-    "domainname": "{{ ansible_dns.domain }}",
-    "interfaces": "{{ ansible_default_ipv4.interface }}",
+    "domainname": "",
+    "interfaces": {
+        "interface": [
+            {
+                "uuid": "34b3f1d1-98ad-4aac-9c9e-a5975da0fcb7",
+                "devicename": "{{ ansible_default_ipv4.interface }}",
+                "method": "static",
+                "address": "{{ ansible_default_ipv4.address }}",
+                "netmask": "{{ ansible_default_ipv4.netmask }}",
+                "gateway": "{{ ansible_default_ipv4.gateway }}",
+                "method6": "manual",
+                "address6": "",
+                "netmask6": "64",
+                "gateway6": "",
+                "dnsnameservers": "{{ ansible_dns.nameservers.0 }}",
+                "dnssearch": "",
+                "mtu": "",
+                "wol": "0",
+                "options": "",
+                "comment": "",
+                "type": "ethernet"
+            }
+        ]
+    },
     "iptables": ""
 }

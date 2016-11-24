@@ -1,6 +1,6 @@
 {
     "hostname": "{{ servername }}",
-    "domainname": "",
-    "interfaces": "",
+    "domainname": "{{ ansible_dns.domain }}",
+    "interfaces": "{{ ansible_default_ipv4.interface }}",
     "iptables": ""
 }

@@ -105,3 +105,7 @@
 - name: Getting couchpotato log rate info
   template: src={{role_path}}/templates/logroate/couchpotato.json dest=/etc/logrotate.d/couchpotato
   tags: Setup log rate couchpotato
+
+- name: Rebuild openmediavault config file
+  shell: "for i in `omv-mkconf -l`; do omv-mkconf $i; done"
+  tags: OVM_config rebuild

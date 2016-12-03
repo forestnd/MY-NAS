@@ -68,29 +68,19 @@
 
 #####Adding Users########
 - name: Adding users
-  user: 
+  user:
+   shell: /bin/bash 
    name: "{{ item.key }}" 
    groups: "{{ item.value.groups }}"
    append: yes
-   password: "{{ item.value.password }}" 
+   password: "{{ item.value.password }}"
   with_dict: "{{ users_accounts }}"
 
 ###Adding SSh-keys###
-- name: creaeting sshkey folder
-  file: 
-   path: /home/{{ item.key }}/.ssh 
-   state: directory
-   owner: "{{ item.key }}"
-   group: "{{ item.key }}"
-  with_dict: "{{ users_accounts }}"
-
 - name: Adding ssh keys
-  copy: 
-   content: "{{ item.value.key }}" 
-   dest: /home/{{ item.key }}/.ssh/authorized_keys
-   owner: "{{ item.key }}"
-   group: "{{ item.key }}"
-   mode: 0600	
+  authorized_key: 
+    user: "{{ item.key }}" 
+    key: "{{ item.value.key }}"
   with_dict: "{{ users_accounts }}"
 
 ###Configure log rotation###

@@ -3,3 +3,4 @@
 /ansible.log
 /vars/useraccounts.yml
 /roles/lockdown/ansible.log
+/ansible.key

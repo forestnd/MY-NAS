@@ -4,7 +4,7 @@ users_accounts:
 #  <Username>: (the users username)
 #    key: The SSH key (public part)
 #    password: the user password (needs to be encrupted)
-#    groups: the groups you want them in with a , seperaating them
+#    groups: the groups you want them in with a , seperaating them in '' quotes
 
 #Adding groups
 user_groups:

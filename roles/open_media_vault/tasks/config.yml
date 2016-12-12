@@ -75,6 +75,7 @@
    append: yes
    password: "{{ item.value.password }}"
   with_dict: "{{ users_accounts }}"
+  tags: user_setup
 
 ###Adding SSh-keys###
 - name: Adding ssh keys
@@ -82,7 +83,7 @@
     user: "{{ item.key }}" 
     key: "{{ item.value.key }}"
   with_dict: "{{ users_accounts }}"
-
+  tags: user_setup
 ###Configure log rotation###
 ##for
 

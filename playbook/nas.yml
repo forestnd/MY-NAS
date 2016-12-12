@@ -5,6 +5,7 @@
   roles:
     - roles/base
     - roles/open_media_vault
+    - roles/lockdown
   vars_files:
     - ../vars/useraccounts.yml
     - ../vars/nas-settings.yml

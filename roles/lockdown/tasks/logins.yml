@@ -1,0 +1,10 @@
+---
+- name: Disable Root login
+  become_method: sudo
+  shell: usermod -p '!' root
+  tags: root_disable
+
+- name: Disable ansible login
+  become_method: sudo
+  shell: usermod -p '!' absible
+  tags: ansible_disable

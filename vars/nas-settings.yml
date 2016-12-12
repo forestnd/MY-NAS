@@ -14,8 +14,7 @@ OMV_repos:
 - millertesting
 - btsync
 - vpn
-- zfs
-- gluster
+#- gluster
 - mono
 - monotesting
 - docker

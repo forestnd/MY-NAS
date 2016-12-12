@@ -18,9 +18,9 @@
   tags: pre-configure
 
 #set network settigs
-- name: Set network interface to static
-  template: src=network-interface.j2 dest=/etc/network/interfaces backup=yes
-  tags: interfaces
+#- name: Set network interface to static
+#  template: src=network-interface.j2 dest=/etc/network/interfaces backup=yes
+#  tags: interfaces
 
 #set network settigs
 - name: Set network hostname

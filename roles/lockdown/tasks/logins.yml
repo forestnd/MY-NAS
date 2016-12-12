@@ -1,10 +1,43 @@
 ---
-- name: Disable Root login
+- name: Disable Root login (local)
   become_method: sudo
   shell: usermod -p '!' root
-  tags: root_disable
+  tags: 
+    - root_disable
+    - root_disable_local
+    - disable_local 
+    - disable_users 
 
-- name: Disable ansible login
+- name: Disable ansible login (local)
   become_method: sudo
-  shell: usermod -p '!' absible
-  tags: ansible_disable
+  shell: usermod -p '!' ansible
+  tags:
+    - ansible_disable
+    - ansible_disable_local
+    - disable_local 
+    - disable_users
+
+- name: Disable ansible login (remote)
+  user:
+   name: ansible
+   shell: /usr/sbin/nologin
+   append: yes
+  tags:     
+    - ansible_disable
+    - ansible_disable_remote
+    - disable_remote 
+    - disable_users
+
+
+- name: Disable ansible login (remote)
+  user:
+   name: root
+   shell: /usr/sbin/nologin
+   append: yes
+  tags:
+    - root_disable
+    - root_disable_remote
+    - disable_remote 
+    - disable_users
+
+

@@ -1,9 +1,20 @@
 ---
-- name: Firewall setup
-  fail:
-    msg: "Installation works only on Debian 7 wheezy"
-  when:
-     ansible_distribution != "Debian" or
-     ansible_distribution_major_version != "7" or
-     ansible_distribution_release != "wheezy"
-  tags: check
+- name: Generate firewall template
+  template: src={{role_path}}/templates/firewall.Jinja2 dest=/tmp/firewall.Jinja2
+  tags:
+    - firewall
+    - create_firewall_template
+
+
+- name: add firewall to OMV
+  shell: omv-config -m /config/system/network/iptables "`cat /tmp/firewall.Jinja2`"
+  tags:
+    - firewall
+    - set_firewall_template
+
+
+- name: Rebuild iptables config 
+  shell: "omv-mkconf iptables"
+  tags: 
+   - firewall
+   - update_firewall_config

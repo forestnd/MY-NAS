@@ -9,3 +9,4 @@
   vars_files:
     - ../vars/useraccounts.yml
     - ../vars/nas-settings.yml
+    - ../vars/security-settings.yml

@@ -1,0 +1,8 @@
+---
+###Firewall settings
+firewall_settings:
+  - {rulenum: 0,chain: INPUT , action: ACCEPT , family: inet, source: , sport: 80 , destination: ,dport: ,protocol: tcp , extraoptions: , comment: }
+  - {rulenum: 1,chain: INPUT , action: ACCEPT , family: inet, source: , sport: 22 , destination: ,dport: ,protocol: tcp , extraoptions: , comment: }
+  - {rulenum: 2,chain: INPUT , action: ACCEPT , family: inet, source: , sport: 23 , destination: ,dport: ,protocol: tcp , extraoptions: , comment: }
+  - {rulenum: 3,chain: INPUT , action: ACCEPT , family: inet, source: , sport: , destination: ,dport: ,protocol: tcp , extraoptions: , comment: }
+  - {rulenum: 4,chain: INPUT , action: ACCEPT , family: inet, source: , sport: , destination: ,dport: ,protocol: udp , extraoptions: , comment: }

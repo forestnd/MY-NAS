@@ -1,0 +1,21 @@
+{
+    "rule": [
+		{% for host in firewall_settings %}
+			{
+				"uuid": "{{ 99999990 | random | to_uuid }}",
+				"rulenum": "{{ host.rulenum }}",
+				"chain": "{{ host.chain }}",
+				"action": "{{ host.action }}",
+				"family": "{{ host.family }}",
+				"source": "{{ host.source }}",
+				"sport": "{{ host.sport }}",
+				"destination": "{{ host.destination }}",
+				"dport": "{{ host.dport }}",
+				"protocol": "{{ host.protocol }}",
+				"extraoptions": "{{ host.extraoptions }}",
+				"comment": "{{ host.comment }}"
+
+			}{% if not loop.last %},{% endif %}
+		{% endfor %}
+    ]
+}

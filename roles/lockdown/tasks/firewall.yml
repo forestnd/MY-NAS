@@ -18,3 +18,25 @@
   tags: 
    - firewall
    - update_firewall_config
+
+- name: Reboot Server for firewall to take affect
+  become: yes
+  shell: sleep 2 && shutdown -r now
+  async: 1
+  poll: 0
+  ignore_errors: true
+  tags: 
+   - firewall
+   - restart_firewall_config
+
+- name: Waiting {{ servername }} to come back up
+  become: false
+  local_action:
+    wait_for
+    host={{ ansible_default_ipv4.address }}
+    state=started
+    delay=20
+    timeout=60
+  tags:
+   - firewall
+   - restart_firewall_config

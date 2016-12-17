@@ -22,11 +22,9 @@ Run this command to start the process `ansible-playbook playbook/nas.yml`
 
 ## Each Ansible Role does
 1. Base basic install of os and setup
-     1. Switching the DHCP to Static
-     2. Configure DNS settings
-     3. Running update on OS is fully up to date
-     4. Installing ntp
-     5. Configuaring ntp time server (max 5)
+     1. Running update on OS is fully up to date
+     2. Installing ntp
+     3. Configuaring ntp time server (max 5)
 2. Openmediavault setup
      1. Get openmediavault repo info 
      2. Get openmediavault-extras repo info
@@ -50,9 +48,9 @@ Run this command to start the process `ansible-playbook playbook/nas.yml`
      1. sickbeard
      2. couchpotato
 6. Lockdown the NAS server (doing)
-     1. Disable root user (done)
-     2. Enable Firewall (Planning on doing)
-     3. Lock down all ports (Planning on doing)
+     1. Disable root user
+     2. Enable Firewall
+     3. Lock down all ports
      4. Enable ports (Planning on doing)
         1. 80
         2. 443

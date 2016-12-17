@@ -1,9 +1,9 @@
 {
-    "rule": [
+    "rule": [    
 		{% for host in firewall_settings %}
 			{
 				"uuid": "{{ 99999990 | random | to_uuid }}",
-				"rulenum": "{{ host.rulenum }}",
+				"rulenum": "{{ loop.index0 }}",
 				"chain": "{{ host.chain }}",
 				"action": "{{ host.action }}",
 				"family": "{{ host.family }}",

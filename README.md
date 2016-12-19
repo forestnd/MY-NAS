@@ -51,7 +51,7 @@ Run this command to start the process `ansible-playbook playbook/nas.yml`
      1. Disable root user
      2. Enable Firewall
      3. Lock down all ports
-     4. Enable ports (Planning on doing)
+     4. Enable ports (doing)
         1. 80
         2. 443
         3. 22

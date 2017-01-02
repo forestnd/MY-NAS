@@ -47,11 +47,11 @@ Run this command to start the process `ansible-playbook playbook/nas.yml`
 5. Setting up logrotate
      1. sickbeard
      2. couchpotato
-6. Lockdown the NAS server (doing)
+6. Lockdown the NAS server
      1. Disable root user
      2. Enable Firewall
      3. Lock down all ports
-     4. Enable ports (doing)
+     4. Enable ports
         1. 80
         2. 443
         3. 22

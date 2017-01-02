@@ -1,3 +1,4 @@
+##This is the Firewall rules the last one must be set as block all ports
 ---
 ###Firewall settings
 firewall_settings:

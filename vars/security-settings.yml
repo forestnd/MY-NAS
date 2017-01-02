@@ -8,6 +8,12 @@ firewall_settings:
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "{{ sickbeard.port }}" ,protocol: tcp , extraoptions: , comment: "sickbeard"}
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "{{ couchpotato.port }}" ,protocol: tcp , extraoptions: , comment: "couchpotato"}
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "{{ minidlna.port }}" ,protocol: tcp , extraoptions: , comment: "minidlna"}
+####Samba####
+  - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "139" ,protocol: tcp , extraoptions: , comment: "Samba"}
+  - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "445" ,protocol: tcp , extraoptions: , comment: "Samba"}
+  - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "137" ,protocol: udp , extraoptions: , comment: "Samba"}
+  - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "138" ,protocol: udp , extraoptions: , comment: "Samba"}
+####Samba####
 ####DNS####
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 53 ,protocol: tcp , extraoptions: , comment: "DNS TCP INPUT"}
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 53 ,protocol: udp , extraoptions: , comment: "DNS UDP INPUT"}

@@ -2,15 +2,11 @@
 ###Firewall settings
 firewall_settings:
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 80 ,protocol: tcp , extraoptions: , comment: "http Traffic" }
+  - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 443 ,protocol: tcp , extraoptions: , comment: "https Traffic" }
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 22 ,protocol: tcp , extraoptions: , comment: "SSH connection"}
-  - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 443 ,protocol: tcp , extraoptions: , comment: "Https traffic"}
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "{{ sickbeard.port }}" ,protocol: tcp , extraoptions: , comment: "sickbeard"}
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "{{ couchpotato.port }}" ,protocol: tcp , extraoptions: , comment: "couchpotato"}
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "{{ minidlna.port }}" ,protocol: tcp , extraoptions: , comment: "minidlna"}
-
-
-
-
 ####DNS####
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 53 ,protocol: tcp , extraoptions: , comment: "DNS TCP INPUT"}
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 53 ,protocol: udp , extraoptions: , comment: "DNS UDP INPUT"}

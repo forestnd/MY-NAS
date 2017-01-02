@@ -15,10 +15,8 @@ firewall_settings:
   - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: "138" ,protocol: udp , extraoptions: , comment: "Samba"}
 ####Samba####
 ####DNS####
-  - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 53 ,protocol: tcp , extraoptions: , comment: "DNS TCP INPUT"}
-  - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 53 ,protocol: udp , extraoptions: , comment: "DNS UDP INPUT"}
-  - {chain: OUTPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 53 ,protocol: tcp , extraoptions: , comment: "DNS TCP OUTPUT"}
-  - {chain: OUTPUT , action: ACCEPT , family: inet, source: , sport: 1-65535 , destination: ,dport: 53 ,protocol: udp , extraoptions: , comment: "DNS UDP OUTPUT"}  
+  - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 53 , destination: ,dport: 1-65535 ,protocol: tcp , extraoptions: , comment: "DNS TCP"}
+  - {chain: INPUT , action: ACCEPT , family: inet, source: , sport: 53 , destination: ,dport: 1-65535 ,protocol: udp , extraoptions: , comment: "DNS UDP"}
 ####DNS#### 
 ##block all rule##
   - {chain: INPUT , action: DROP , family: inet, source: , sport: , destination: ,dport: ,protocol: all, extraoptions: , comment: "Dops all other connections"}
